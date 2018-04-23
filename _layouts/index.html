@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	{% include header.html %}
+	<body>
+		{% include header_nav.html %}
+		<div class="wrapper main">
+			<blockquote id="intro">
+				<p>没什么作为的程序员</p>
+			</blockquote>
+		
+			<div id="content" class="index">
+				<div id="main">
+				{{ content }}
+				</div>
+			</div>
+			{% include footer.html %}
+		</div>
+	</body>
+</html>
+
