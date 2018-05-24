@@ -8,9 +8,7 @@ tag: iOS
 #### Xcode 调试的时候忽略lldb的信号捕获
 可在UIApplicationMain添加断点，然后执行一下代码，即可去除lldb的自动捕获，从而让我们的crash抓取可以正常捕获到
 
-```
-process handle -p true -s false -n true SIGSEGV
-```
+`process handle -p true -s false -n true SIGSEGV`
 
 
 
@@ -133,11 +131,23 @@ Power failure
 
 #### 关键点注意
 在以上列出的信号中，程序不可捕获、阻塞或忽略的信号有：`SIGKILL,SIGSTOP`
+
+
 不能恢复至默认动作的信号有：`SIGILL,SIGTRAP`
+
+
 默认会导致进程流产的信号有：`SIGABRT,SIGBUS,SIGFPE,SIGILL,SIGIOT,SIGQUIT,SIGSEGV,SIGTRAP,SIGXCPU,SIGXFSZ`
+
+
 **默认会导致进程退出的信号有:** `SIGALRM,SIGHUP,SIGINT,SIGKILL,SIGPIPE,SIGPOLL,SIGPROF,SIGSYS,SIGTERM,SIGUSR1,SIGUSR2,SIGVTALRM`
+
+
 **默认会导致进程停止的信号有：**`SIGSTOP,SIGTSTP,SIGTTIN,SIGTTOU`
+
+
 默认进程忽略的信号有：`SIGCHLD,SIGPWR,SIGURG,SIGWINCH`
+
+
 
 此外，SIGIO在SVR4是退出，在4.3BSD中是忽略；SIGCONT在进程挂起时是继续，否则是忽略，不能被阻塞。
 
